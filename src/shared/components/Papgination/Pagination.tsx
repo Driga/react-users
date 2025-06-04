@@ -10,9 +10,9 @@ interface Props {
 function Pagination({ total, perPage, current, onPageChange }: Props) {
     const pages = Math.ceil(total / perPage);
 
-    if (pages <= 1) return null;
-
     const pageItems = React.useMemo(() => {
+        if (pages <= 1) return null;
+
         return Array.from({ length: pages }, (_, i) => {
             const pageNumber = i + 1;
             const isActive = pageNumber === current;
@@ -32,12 +32,13 @@ function Pagination({ total, perPage, current, onPageChange }: Props) {
         });
     }, [pages, current, onPageChange]);
 
+    if (!pageItems) return null;
+
     return (
         <nav className="mt-3" aria-label="User pagination">
             <ul className="pagination justify-content-center">{pageItems}</ul>
         </nav>
     );
 }
-
 
 export default React.memo(Pagination);

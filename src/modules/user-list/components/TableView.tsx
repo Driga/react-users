@@ -1,0 +1,52 @@
+import { User } from '../types/types';
+import { CaretDownFill, CaretUpFill } from 'react-bootstrap-icons';
+import { SortDirection } from "@/modules/user-list/types";
+
+interface Props {
+    users: User[];
+    onUserClick: (user: User) => void;
+    sortDirection: 'asc' | 'desc';
+    onSortClick: () => void;
+}
+
+export default function TableView({users, onUserClick, sortDirection, onSortClick}: Props) {
+    const renderSortIcon = () => (
+        <span className="ms-1" aria-hidden>
+      {sortDirection === 'asc' ? <CaretUpFill/> : <CaretDownFill/>}
+    </span>
+    );
+
+    return (
+        <table className="table table-hover" role="table" aria-label="User list table">
+            <thead>
+            <tr>
+                <th
+                    scope="col"
+                    style={{cursor: 'pointer'}}
+                    onClick={onSortClick}
+                    aria-sort={sortDirection === SortDirection.Asc ? 'ascending' : 'descending'}
+                >
+                    Name {renderSortIcon()}
+                </th>
+                <th scope="col" className="d-none d-md-table-cell">Email</th>
+                <th scope="col">Company</th>
+            </tr>
+            </thead>
+            <tbody>
+            {users.map(user => (
+                <tr
+                    key={user.id}
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => onUserClick(user)}
+                    aria-label={`Open details for ${user.firstName}`}
+                >
+                    <td>{user.firstName}</td>
+                    <td className="d-none d-md-table-cell">{user.email}</td>
+                    <td>{user.company?.name}</td>
+                </tr>
+            ))}
+            </tbody>
+        </table>
+    );
+}

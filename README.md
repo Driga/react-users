@@ -1,9 +1,35 @@
 # React Users Directory
 
-A modular React application to list and explore users fetched from a remote API.  
-Built with **React**, **Next.js** **TypeScript**, **React-Bootstrap**, **Jest**, and supports **modals**, **pagination**, **search**, **sorting**, **unit tests**, and **Storybook**.
+A modular React application to list and explore users fetched from a remote API. 
+This project is a scalable, maintainable, and performance-optimized React application built with attention to best practices and modern frontend engineering principles. It demonstrates how to structure a real-world app using a modular architecture and clean separation of concerns.
+
 
 ---
+
+## 💡 Key Highlights
+
+### ⚙️ Architecture & Structure
+
+- **Modular file system** based on features:
+    - `features/user-list/`
+    - `shared/components/`, `shared/hooks/`, `shared/providers/`
+- **Barrel files (`index.ts`)** for intuitive imports.
+- **Component-driven development** using `Storybook`.
+
+### 🚀 Performance Optimizations
+
+- ✅ `React.memo` and `useMemo` to avoid unnecessary renders.
+- ✅ `useCallback` to stabilize callback props.
+- ✅ **Debounced search input** to reduce frequent computation.
+- ✅ Smart state lifting – only rerendering what’s necessary.
+
+### 🌐 Accessibility & UX
+
+- 📎 Semantic HTML & ARIA roles.
+- 🌗 Responsive UI using Bootstrap classes.
+- 🌀 Full-screen loaders & error messages.
+- 🔀 Keyboard-friendly sortable table with pagination.
+
 
 ## 🚀 Features
 
@@ -16,8 +42,6 @@ Built with **React**, **Next.js** **TypeScript**, **React-Bootstrap**, **Jest**,
 - ✅ Shared components and hooks.
 - ✅ Hooks with extracted logic from components.
 - ✅ Unit tests with Jest and React Testing Library
-- ✅ Storybook documentation for components
-- ✅ Preventing redundant component renders with React.memo, useMemo, useCallback
 
 ---
 

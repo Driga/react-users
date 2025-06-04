@@ -9,9 +9,9 @@ jest.mock('@/shared/hooks/useDebouncedValue', () => ({
 }));
 
 const mockUsers: User[] = [
-    { id: 1, firstName: 'Alice', lastName: 'Alice', email: '', phone: '', website: '', username: ''} ,
-    { id: 2, firstName: 'Bob', lastName: 'Bob', email: '', phone: '', website: '', username: '' },
-    { id: 3, firstName: 'Charlie', lastName: 'Charlie', email: '', phone: '', website: '', username: '' },
+    { id: 1, firstName: 'Alice', lastName: 'Alice', email: '', phone: '', website: '', username: '', university: '', image: ''} ,
+    { id: 2, firstName: 'Bob', lastName: 'Bob', email: '', phone: '', website: '', username: '', university: '', image: '' },
+    { id: 3, firstName: 'Charlie', lastName: 'Charlie', email: '', phone: '', website: '', username: '', university: '', image: '' },
 ];
 
 describe('useFilteredPaginatedUsers', () => {

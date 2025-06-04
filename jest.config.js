@@ -15,7 +15,7 @@ const customJestConfig = {
 
     // Support for absolute imports with `@/`
     moduleNameMapper: {
-        '^@/(.*)$': '<rootDir>/$1',
+        '^@/(.*)$': '<rootDir>/src/$1'
     },
 
     // Optional: collect code coverage
